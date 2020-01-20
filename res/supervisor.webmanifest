@@ -1,0 +1,22 @@
+{
+	"dir" : "ltr",
+	"lang" : "en",
+	"name" : "iMaintain Supervisor",
+	"scope" : "/supervisor/",
+	"display" : "standalone",
+	"start_url" : "https://imaintain.drdivyalaparoscopy.com/supervisor/",
+	"short_name" : "iMaintain Supervisor",
+	"theme_color" : "transparent",
+	"description" : "",
+	"orientation" : "any",
+	"background_color" : "transparent",
+	"related_applications" : "",
+	"prefer_related_applications" : "false",
+	"icons" : [
+		{
+			"src": "https://imaintain.drdivyalaparoscopy.com/res/logo.png",
+			"sizes": "512x512"
+		}],
+	"screenshots" : [],
+	"generated" : "true"
+}

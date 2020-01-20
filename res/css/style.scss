@@ -1,0 +1,134 @@
+/**
+  * Variables
+  */
+
+$card-white: #fff;
+$white: #fff;
+$persian-green: #009688;
+$ceramic: #f5f7f8;
+$dark-grey: #3a4b53;
+$input_bg: #f3f3f3;
+
+/******************************************/
+
+/**
+  * Upgrades to existing class
+  */
+
+.w3-input {
+	display: inline !important;
+	outline: none;
+}
+
+.w3-select {
+	background-color: #efefef; border: none; outline: none;
+	border-radius: 25px; 
+}
+
+html, body, h1, h2, h3, h4, h5 {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.s3-card {
+	box-shadow:  0 4px 10px 0 rgba(0,150,136,0.2), 0 4px 20px 0 rgba(0,0,0,0.19) !important;
+	background-color: $card-white !important;
+}
+
+.w3-theme-d2 {
+	color: $white !important;
+	background-color: $persian-green !important;
+}
+
+.w3-theme-d4 {
+	color: $white !important;
+	background-color: $persian-green !important;
+}
+
+.fa-bell {
+	color: $dark-grey !important;
+}
+
+/******************************************/
+
+/**
+  * Common self defined
+  */
+
+.s3-btn {
+	background-color: $persian-green;
+	color: $ceramic;
+	padding: 24px 16px !important;
+	font-size: 16px;
+	cursor: pointer;
+	width: 98px;
+	border: 9px solid;
+	border-radius: 50%;
+}
+
+.s3-btn-smol {
+	background-color: $persian-green;
+	color: $ceramic;
+	padding: 24px 16px !important;
+	cursor: pointer;
+	width: 90px;
+	height: 90px;
+	border: 9px solid;
+	border-radius: 50%;
+}
+
+.no-outline {
+	outline: none;
+}
+
+.s3-input {
+	width: 100% !important;
+	padding: 8px;
+	border-radius: 25px; 
+}
+
+/*****************************************/
+
+/**
+ * Code Related to Footer
+ */
+
+.fa-qrcode {
+	font-size: 32px;
+}
+
+.fa-bolt {
+	font-size: 32px;
+}
+
+.qr-holder {
+	display: flex;
+	justify-content: center;
+}
+
+.footer-home {
+	position: absolute;
+	left: 50px;
+	bottom: 15px;
+	color: white;
+}
+
+.footer-activities {
+	position: absolute;
+	right: 50px;
+	bottom: 15px;
+	color: white;
+}
+
+.main-footer {
+	height: 50px;
+}
+
+.s4-input {
+	border: none;
+    padding: 5px;
+    border-radius: 25px;
+    background-color: $input_bg;
+    outline: none;
+}
+
+/****************************************/
