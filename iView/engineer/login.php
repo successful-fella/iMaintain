@@ -48,7 +48,7 @@
 		<img src="<?= base_url('res/images/login.png') ?>" style="width: inherit;">
 	</div>
 
-	<script type="text/javascript" src="<?= base_url('res/js/login.js') ?>"></script>
+	<script type="text/javascript" src="<?= base_url('res/js/login.js?v=2') ?>"></script>
 	<script>
 		if ("serviceWorker" in navigator) {
 			if (navigator.serviceWorker.controller) {

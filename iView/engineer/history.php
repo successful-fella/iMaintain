@@ -25,16 +25,21 @@
 		</div>
 
 		<br><br>
-		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" style="outline: none;">
 		<div class="container" style="overflow-x:auto;">
 
+			<div id="history-area" style="justify-content: center; display: flex;">
+			</div>
 			<table id="myTable">
-			  <tr class="header">
-			    <th class="tableWidth">Name</th>
-			    <th class="tableWidth">Engineer ID</th>
-			    <th class="tableWidth">Service Date</th>
-			    <th class="tableWidth">Download Report</th>
-			  </tr>
+				<thead>
+				  <tr class="header">
+					<th class="tableWidth">Name</th>
+					<th class="tableWidth">Engineer ID</th>
+					<th class="tableWidth">Service Date</th>
+					<th class="tableWidth">Download Report</th>
+				  </tr>
+				</thead>
+				<tbody>
 			  <?php foreach($services as $service): ?>
 				  <tr>
 				    <td><?= $service->user_name ?></td>
@@ -43,6 +48,7 @@
 				    <td><a href="<?= base_url('engineer/downloadsinglereport/'.$service->service_id) ?>"><button class="w3-button w3-section w3-teal w3-ripple w3-round-xxlarge no-outline">Download</button></a></td>
 				  </tr>
 				<?php endforeach; ?>
+				</tbody>
 			</table>
 		</div>	
 	
@@ -52,12 +58,6 @@
 		include __DIR__.'/includes/footer.php';
 	?>
 	<script>
-		$(document).ready(function() {
-			$('#example').DataTable({
-				"scrollY": "200px",
-				"scrollCollapse": true,
-			});
-		} );
 
 		function myFunction() {
 		  var input, filter, table, tr, td, i, txtValue;
@@ -65,6 +65,7 @@
 		  filter = input.value.toUpperCase();
 		  table = document.getElementById("myTable");
 		  tr = table.getElementsByTagName("tr");
+		  var temp = 0
 		  for (i = 0; i < tr.length; i++) {
 		    td = tr[i].getElementsByTagName("td")[0];
 		    if (td) {
@@ -73,9 +74,17 @@
 		        tr[i].style.display = "";
 		      } else {
 		        tr[i].style.display = "none";
+				temp++
 		      }
 		    }       
 		  }
+		if(temp+1 == tr.length) {
+			$('#history-area').html("No record found")
+			$('#myTable').attr('style', 'display: none')
+		} else {
+			$('#history-area').empty()
+			$('#myTable').attr('style', 'display: table')
+		}
 		}
 	</script>	
 

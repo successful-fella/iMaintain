@@ -25,8 +25,10 @@
 			<div class="navbar-collapse-header d-md-none">
 				<div class="row">
 					<div class="col-6 collapse-brand">
-						<a href="./index.html">
-							<img src="<?= base_url('res/images/logo.png')?>">
+						<a href="#">
+							<div style="margin-left: 22px; font-size: 31px;">
+								<b>iMaintain</b>
+							</div>
 						</a>
 					</div>
 					<div class="col-6 collapse-close">
@@ -85,7 +87,7 @@
 	<nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
 		<div class="container-fluid">
 			<!-- Brand -->
-			<a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
+			<a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="#">Dashboard</a>
 			<!-- User -->
 			<ul class="navbar-nav align-items-center d-none d-md-flex">
 				<li class="nav-item dropdown">
@@ -101,13 +103,8 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
 						<div class=" dropdown-header noti-title">
-							<h6 class="text-overflow m-0">Welcome!</h6>
+							<h6 class="text-overflow m-0">Welcome <?= $this->session->sup_name ?></h6>
 						</div>
-						<a href="./examples/profile.html" class="dropdown-item">
-							<i class="ni ni-settings-gear-65"></i>
-							<span>Settings</span>
-						</a>
-						<div class="dropdown-divider"></div>
 						<a href="<?= base_url('supervisor/logout') ?>" class="dropdown-item">
 							<i class="ni ni-user-run"></i>
 							<span>Logout</span>

@@ -53,14 +53,12 @@
 		include __DIR__.'/includes/footer.php';
 	?>
 	<script>
-		$(document).ready(() => {
-			<?php if(isset($_GET['error'])) { ?>
+		<?php if(!is_null($this->session->flashdata('error'))) { ?>
 				Swal.fire({
 					type: 'error',
-					title: '<?= $_GET['error'] ?>'
+					title: '<?= $this->session->flashdata('error') ?>'
 				})	
 			<?php } ?>
-		})
 	</script>
 </body>
 </html> 

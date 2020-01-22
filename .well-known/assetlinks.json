@@ -1,0 +1,5 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.imaintain.engineer",
+               "sha256_cert_fingerprints": ["FD:DB:EB:DC:BB:C5:40:2D:41:71:83:56:5B:AA:D3:B1:09:D4:0D:0B:A8:00:E2:51:2E:8C:13:86:44:5B:25:5F"] }
+}]

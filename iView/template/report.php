@@ -242,37 +242,56 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 <body>
 
 <!-- Page Container -->
+<div class="w3-card-2 w3-teal w3-top">
+	<h3 class="w3-center w3-text-white w3-padding-16"><b class="w3-medium">Service report by</b> <b>iMaintain</b></h3>
+</div><br><br><br><br><br>
 <div class="w3-white w3-margin-bottom">
-	<h3 class="w3-center w3-text-grey w3-padding-16">Service Report by iMaintain</h3>
 	<div class="w3-container">
+		<div class="w3-card-2 w3-padding" style="background-color: #E0E0E0">
 		<h5 class="w3-opacity">
-			<b><?= $engineer_name ?> <span class="w3-tag w3-teal w3-round"><?= $engineer_id ?></span></b>
+			<b>Serviced By: </b> <span><?= $engineer_name ?></span>
 		</h5>
-		<h6 class="w3-text-teal"><?= date_format(date_create($date), 'd/m/Y') ?> -
+		<h5 class="w3-opacity">
+			<b>Engineer ID: </b> <span><?= $engineer_id ?></span>
+		</h5>
+		<h5 class="w3-opacity">
+			<b>Service Date:</b> <span><?= date_format(date_create($date), 'd/m/Y') ?></span>
+		</h5>
+		<h5 class="w3-opacity">
+			<b>Service Status:</b> <b>
 			<?php
 				switch($service_status) {
 					case '1':
-						echo '<span class="w3-tag w3-orange w3-round">Service Pending</span>';
+						echo '<span class="w3-text-deep-orange">Service Pending</span>';
 						break;
 					case '2':
-						echo '<span class="w3-tag w3-teal w3-round">Service Complete</span>';
+						echo '<span class="w3-text-green">Service Complete</span>';
 						break;
 					case '3':
-						echo '<span class="w3-tag w3-yellow w3-round">Service Shifted</span>';
+						echo '<span class="w3-text-yellow">Service Shifted</span>';
 						break;
 				}
-			?>
-		</h6>
-		<hr>
+			?></b>
+		</h5>
+		</div>
 	</div>
-	<div class="w3-container">
-		<h5 class="w3-opacity"><b>Equipment Name - <?= $equipment_name ?></b></h5>
-		<p><?= $service_remark ?></p>
-	</div>
-	<footer class="w3-container w3-teal w3-center">
-		<p>Serviced by Airport Authority</p>
-	</footer>
 </div>
+<div class="w3-white w3-margin-bottom">
+	<div class="w3-container">
+		<div class="w3-card-2 w3-padding">
+				<h5 class="w3-opacity ">
+					<b>Equipment Name :</b> <span class="w3-text-black w3-round " style=" display:inline;"><?= $equipment_name ?></span>
+				</h5><br>
+				<h5 class="w3-opacity">
+					<p class="w3-medium"><?= nl2br($service_remark)?></p>
+				</h5>
+		</div>
+	</div>
+</div>
+<br><br>
+<footer class="w3-container w3-padding w3-bottom w3-teal w3-center">
+	<b>Serviced by Airport Authority</b>
+</footer>
 
 
 </body>

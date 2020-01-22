@@ -153,13 +153,11 @@
 											<th scope="col">Date/Time</th>
 										</tr>
 									</thead>
-									<tbody>
-										<?php foreach($activities as $activity): ?>
-											<tr>
-												<td style="white-space: normal;"><?= $activity->activity_title ?></td>
-												<td><?= $activity->activity_time ?> @ <?= date_format(date_create($activity->activity_date), 'd/m/Y') ?></td>
-											</tr>
-										<?php endforeach; ?>
+									<tbody id="ajax_activity">
+										<tr>
+											<th>Loading right away...</th>
+											<th></th>
+										</tr>
 									</tbody>
 								</table>
 							</div>
@@ -303,6 +301,20 @@
 	$('#eng_id_search').keyup(delay(function() {
 		searchEngineer($('#eng_id_search').val())
 	}, 1000))
+	
+	setInterval(function() {
+		$.ajax({
+			url: base_url + 'api/getrecentactivities',
+			success: function(resp) {
+				var result = JSON.parse(resp)
+				var html = ''
+				for(var i = 0; i < result.length; i++) {
+					html += '<tr><td style="white-space: normal;">'+result[i].activity_title+'</td><td>'+result[i].activity_time+' @ '+result[i].activity_date+'</td></tr>'
+				}
+				$('#ajax_activity').html(html)
+			}
+		})
+	}, 2500)
 </script>
 
 </html>

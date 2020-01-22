@@ -70,13 +70,12 @@ class Supervisor_model extends CI_Model
 	}
 
 	function updateEngineer($name, $id, $phone, $password) {
+		$data = array();
 		if(!empty($password)) {
 			$data['user_password'] = password_hash($password, PASSWORD_DEFAULT);
 		}
-		$data = array(
-			'user_name' => $name,
-			'user_phone' => $phone
-		);
+		$data['user_name'] = $name;
+		$data['user_phone'] = $phone;
 		$this->db->where('user_id', $id)->update('user', $data);
 	}
 
@@ -99,6 +98,16 @@ class Supervisor_model extends CI_Model
 		);
 		$this->db->insert('equipment', $data);
 	}
+	
+	function updateEquipment($arr) {
+		$data = array(
+			'equipment_name' => $arr['name'],
+			'equipment_doi' => $arr['doi'],
+			'department_id' => $arr['dept_id'],
+			'equipment_detail' => $arr['details'],
+		);
+		$this->db->where('equipment_id', $arr['id'])->update('equipment', $data);
+	}
 
 	function getAllNotifications() {
 		$query = $this->db->join('user', 'user.user_id=notification.user_id', 'left')->order_by('notification_id', 'DESC')->limit(8)->get('notification');
@@ -106,7 +115,7 @@ class Supervisor_model extends CI_Model
 	}
 
 	function getAllActivities() {
-		$query = $this->db->order_by('activity_tracker_id')->limit(5)->get('activity_tracker');
+		$query = $this->db->order_by('activity_tracker_id', 'DESC')->limit(5)->get('activity_tracker');
 		return $query->result();
 	}
 

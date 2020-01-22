@@ -14,13 +14,12 @@ class Supervisor extends CI_Controller
 			return true;
 		} else {
 			if(isset($_COOKIE['sup_id'])) {
-				$query = $this->db->where('user_id', $_COOKIE['sup_id'])
-							->where('user_password', $_COOKIE['sup_pass'])
-							->where('user_type', '2')
-							->get('user');
+				$query = $this->db->where('supervisor_id', $_COOKIE['sup_id'])
+							->where('supervisor_password', $_COOKIE['sup_pass'])
+							->get('supervisor');
 				if($query->num_rows()) {
 					$this->session->set_userdata('sup_id', $_COOKIE['sup_id']);
-					$this->session->set_userdata('sup_name', $query->row()->user_name);
+					$this->session->set_userdata('sup_name', $query->row()->supervisor_name);
 					return true;
 				} else {
 					return false;
@@ -128,6 +127,27 @@ class Supervisor extends CI_Controller
 		$data['departments'] = $this->Supervisor_model->getAllDepartments();
 		$data['equipments'] = $this->Supervisor_model->getAllEquipments();
 		$this->load->view('supervisor/add_equipment', $data);	
+	}
+	
+	public function updateEquipment() {
+		if(!$this->sessionExists()) {
+			redirect('supervisor/login');
+		}
+		$this->load->model('Supervisor_model');
+		if($_SERVER['REQUEST_METHOD'] === 'POST') {
+			$this->Supervisor_model->updateEquipment($_POST);
+			redirect('supervisor/equipments?success=Equipment Updated');
+		}
+	}
+	
+	public function deleteEquipment($id) {
+		if(!$this->sessionExists()) {
+			redirect('supervisor/login');
+			exit;
+		}
+		$this->db->where('equipment_id', $id)
+				->delete('equipment');
+		redirect('supervisor/equipments?success=Equipment Deleted!');
 	}
 
 	public function sendNotification() {

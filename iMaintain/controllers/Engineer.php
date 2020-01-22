@@ -62,16 +62,19 @@ class Engineer extends CI_Controller
 		}
 		$this->load->model('Engineer_model');
 		if(!$this->Engineer_model->equipmentExist($equipment_id)){
-			redirect('engineer/home?error=Invalid Equipment ID');
+			$this->session->set_flashdata('error', 'Invalid Equipment ID');
+			redirect('engineer/home');
 		}
 		$data['equipment'] = $this->Engineer_model->getEquipmentDetails($equipment_id);
 		$data['services'] = $this->Engineer_model->getLastThreeService($equipment_id);
 		$status = $this->Engineer_model->checkStatus($equipment_id);
-		if($status->service_status == '1') {
-			$data['pending'] = true;
-			$data['pending_by'] = $status->user_name;
-			$data['pending_by_id'] = $status->user_id;
-			$data['pending_remark'] = $status->service_remark;
+		if(isset($status->service_status)) {
+			if($status->service_status == '1') {
+				$data['pending'] = true;
+				$data['pending_by'] = $status->user_name;
+				$data['pending_by_id'] = $status->user_id;
+				$data['pending_remark'] = $status->service_remark;
+			}
 		}
 		$this->load->view('engineer/equipment', $data);
 		$text = $this->session->eng_name." (ID ".$this->session->eng_id.") scanned QR Code of ".$data['equipment']->equipment_name." (Equipment ID ".$equipment_id.")";
@@ -95,7 +98,8 @@ class Engineer extends CI_Controller
 									->equipment_name;
 		$text = $this->session->eng_name." (ID ".$this->session->eng_id.") updated service history of ".$equipment_name." (Equipment ID ".$this->input->post('equipment_id').")";
 		$this->Engineer_model->pushToActivity($text);
-		redirect('engineer/equipment/'.$this->input->post('equipment_id').'?success=Servicing Added');
+		$this->session->set_flashdata('success', 'Servicing Added');
+		redirect('engineer/equipment/'.$this->input->post('equipment_id'));
 	}
 
 	public function activity() {

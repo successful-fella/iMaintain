@@ -25,6 +25,8 @@
 		    position: relative !important;
 		    border-radius: 0px;
 		}
+		
+		
 	</style>
 
 <body class="w3-theme-l5">
@@ -77,7 +79,7 @@
 		var base_url = "<?= $base_url ?>"
 	</script>
 	<script src="https://app.catriu.com/assets/js/jsQR.js"></script>
-	<script type="text/javascript" src="<?= base_url('res/js/scanner.js?v=12') ?>"></script>
+	<script type="text/javascript" src="<?= base_url('res/js/scanner.js?v=15') ?>"></script>
 
 </body>
 </html> 

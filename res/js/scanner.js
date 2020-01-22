@@ -78,7 +78,8 @@ function qr() {
 					type: 'success',
 					title: "Loading right away..."
 				})
-				window.location.href = base_url + 'equipment/'+qr_data.split('airport_')[1];
+				window.location.href = base_url + 'engineer/equipment/'+qr_data.split('airport_')[1]
+				return
 			} else {
 				Toast.fire({
 					type: 'error',
@@ -95,5 +96,5 @@ function moveNow() {
 		$('#equipment-id').focus()
 		return
 	}
-	window.location.href = base_url + 'equipment/' + $('#equipment-id').val()
+	window.location.href = base_url + 'engineer/equipment/' + $('#equipment-id').val()
 }

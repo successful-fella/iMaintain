@@ -35,6 +35,10 @@ function checkLogin() {
 	$('#eng-btn').prop('disabled', true)
 	var id = $('#eng-id').val()
 	var pass = $('#eng-pass').val()
+	Toast.fire({
+		type: 'warning',
+		title: 'Please wait...'
+	})
 	$.ajax({
 		url: base_url + 'api/checkLogin',
 		type: "POST",

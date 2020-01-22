@@ -61,7 +61,7 @@
 								<table class="w3-table w3-striped w3-white">
 								  <tr>
 									<td><i class="fa fa-id-card w3-text-blue w3-large"></i></td>
-									<td>Equipment ID</td>
+									<td>S/N of Equipment</td>
 									<td><i><?= $equipment->equipment_id ?></i></td>
 								  </tr>
 								  <tr>
@@ -111,7 +111,7 @@
 
 							<div class="w3-round-xlarge w3-margin-bottom">
 								<div class="w3-center w3-round-xlarge">
-									<select name="status" required="" class="w3-select">
+									<select name="status" required="" class="w3-select" required>
 										<option selected disabled>Select Completion Status</option>
 										<option value="1">Pending</option>
 										<option value="2">Completed</option>
@@ -121,7 +121,7 @@
 
 							<div class="w3-round-xlarge w3-margin-bottom">
 								<div class="w3-center w3-round-xlarge">
-									<textarea type="text" name="service_details" placeholder="Enter Remark" class="s3-input s4-input"></textarea> 
+									<textarea type="text" name="service_details" placeholder="Enter Remark" class="s3-input s4-input" style="height: 100px;"></textarea> 
 								</div>
 							</div>
 
@@ -167,16 +167,16 @@
 		}
 
 		$(document).ready(() => {
-			<?php if(isset($_GET['error'])) { ?>
+			<?php if(!is_null($this->session->flashdata('error'))) { ?>
 				Swal.fire({
 					type: 'error',
-					title: '<?= $_GET['error'] ?>'
+					title: '<?= $this->session->flashdata('error') ?>'
 				})	
 			<?php } ?>
-			<?php if(isset($_GET['success'])) { ?>
+			<?php if(!is_null($this->session->flashdata('success'))) { ?>
 				Swal.fire({
 					type: 'success',
-					title: '<?= $_GET['success'] ?>'
+					title: '<?= $this->session->flashdata('success') ?>'
 				})	
 			<?php } ?>
 		})
