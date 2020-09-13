@@ -68,6 +68,7 @@ class Engineer_model extends CI_Model
 
 	function getLastThreeService($equipment_id) {
 		$query = $this->db->join('user', 'user.user_id=service.user_id')
+						->where('equipment_id', $equipment_id)
 						->limit('3')
 						->order_by('service_id', 'DESC')
 						->get('service');
@@ -76,6 +77,7 @@ class Engineer_model extends CI_Model
 
 	function getAllServicesByEquipmentId($equipment_id) {
 		$query = $this->db->join('user', 'user.user_id=service.user_id')
+						->where('equipment_id', $equipment_id)
 						->order_by('service_id', 'DESC')
 						->get('service');
 		return $query->result();
