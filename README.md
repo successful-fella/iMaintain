@@ -1,45 +1,19 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+## Challenge Statement -
+Develop a solution such field engineers can scan QR Code using your app, do servicing and note the details in app. This is two entity system where supervisor can see real time scanning data and engineers instead of old fashioned putting maintenance labels and dates, use app on their smartphone to carry out the same.
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+## What is iMaintain?
+Built on PHP, iMaintain is PWA for mobile app (/engineer route) and dashboard for supervisor (/supervisor route). Since engineer is a PWA, interface is mobile first. Engineer can see history, scan QR code to know equipment details and add servicing history. It have advance backend logic to transfer servicing history to one another. Camera media API is used for QR code proccessing which is read and sent to server.
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+# How to setup?
+A whole lot is generalised so all you've to do is to clone this repository, import the imaintain.sql file and setup database connection at `iMaintain/config/database.php`. Database comes with pre populated data.
+Login for engineer is - 2:2590 (/engineer)
+Login for supervisor is - 2590:2590 (/supervisor)
 
----
+# What's more?
+* Interface is built with the help of https://github.com/shivammagarde. He is absolutely amazing in UI/UX desiging, prototyping (Adobe XD) and creating videos in Premiere Pro.
+* I set up PWA, JavaScript and all PHP part.
+* We completed iMaintain in 2-3 days.
+* There is a Django version available at https://github.com/yashwardhanchauhan/iMaintain. It was built on the basis of this PHP version.
+* You can use Init controller to add a landing page.
 
-## Edit a file
-
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
-
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
-
----
-
-## Create a file
-
-Next, you’ll add a new file to this repository.
-
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
-
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
-
----
-
-## Clone a repository
-
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
-
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
-
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+> This project was made almost a year back, many coding standards and all are changed so this needs rework.
