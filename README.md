@@ -6,7 +6,9 @@ Built on PHP, iMaintain is PWA for mobile app (/engineer route) and dashboard fo
 
 ## How to setup?
 A whole lot is generalised so all you've to do is to clone this repository, import the imaintain.sql file and setup database connection at `iMaintain/config/database.php`. Database comes with pre populated data.
+
 Login for engineer is - 2:2590 (/engineer)
+
 Login for supervisor is - 2590:2590 (/supervisor)
 
 ## What's more?
@@ -15,5 +17,6 @@ Login for supervisor is - 2590:2590 (/supervisor)
 * We completed iMaintain in 2-3 days.
 * There is a Django version available at https://github.com/yashwardhanchauhan/iMaintain. It was built on the basis of this PHP version.
 * You can use Init controller to add a landing page.
+
 
 > This project was made almost a year back, many coding standards and all are changed so this needs rework.
