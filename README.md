@@ -1,5 +1,5 @@
 ## Challenge Statement -
-Develop a solution such field engineers can scan QR Code using your app, do servicing and note the details in app. This is two entity system where supervisor can see real time scanning data and engineers instead of old fashioned putting maintenance labels and dates, use app on their smartphone to carry out the same.
+Develop a solution such that field engineers can scan QR Code using your app, do servicing and note the details in app. This is two entity system where supervisor can see real time scanning data and engineers instead of old fashioned putting maintenance labels and dates, use app on their smartphone to carry out the same.
 
 ## What is iMaintain?
 Built on PHP, iMaintain is PWA for mobile app (/engineer route) and dashboard for supervisor (/supervisor route). Since engineer is a PWA, interface is mobile first. Engineer can see history, scan QR code to know equipment details and add servicing history. It have advance backend logic to transfer servicing history to one another. Camera media API is used for QR code proccessing which is read and sent to server.
