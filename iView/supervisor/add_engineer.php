@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-	$title = "Add Engineer";
+	$title = "Add Employee";
 	include __DIR__."/includes/head.php";
 ?>
 
@@ -22,7 +22,7 @@
 				  <div class="card-header bg-white border-0">
 					<div class="row align-items-center">
 					  <div class="col-8">
-						<h3 class="mb-0">Add Engineers</h3>
+						<h3 class="mb-0">Add Employees</h3>
 					  </div>
 					</div>
 				  </div>
@@ -31,14 +31,14 @@
 						<div class="row">
 						  <div class="col-lg-3">
 							<div class="form-group">
-							  <label class="form-control-label" for="eng_name">Engineer Name</label>
+							  <label class="form-control-label" for="eng_name">Employee Name</label>
 							  <input type="text" name="category_name" id="eng_name" class="form-control form-control-alternative" placeholder="Enter name" required>
 							</div>
 						  </div>
 						  <div class="col-lg-3">
 							<div class="form-group">
-							  <label class="form-control-label" for="eng_id">Engineer ID</label>
-							  <input type="text" name="category_name" id="eng_id" class="form-control form-control-alternative" placeholder="Enter Engineer ID" required>
+							  <label class="form-control-label" for="eng_id">Employee ID</label>
+							  <input type="text" name="category_name" id="eng_id" class="form-control form-control-alternative" placeholder="Enter Employee ID" required>
 							</div>
 						  </div>
 						  <div class="col-lg-3">
@@ -76,7 +76,7 @@
 		  	<div class="card-header bg-white border-0">
 			  <div class="row align-items-center">
 			    <div class="col-8">
-				  <h3 class="mb-0">Engineers</h3>
+				  <h3 class="mb-0">Employees</h3>
 			    </div>
 			  </div>
 		    </div>
@@ -84,8 +84,8 @@
 				<table id="eng_tbl" class="table" style="width:100%">
 					<thead>
 						<tr>
-							<td>Engineer Name</td>
-							<td>Engineer ID</td>
+							<td>Employee Name</td>
+							<td>Employee ID</td>
 							<td>Phone Number</td>
 							<td>Action</td>
 						</tr>
@@ -120,26 +120,26 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title">Update Engineer Details</h5>
+						<h5 class="modal-title">Update Employee Details</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
-							<label>Engineer ID</label>
+							<label>Employee ID</label>
 							<input type="text" class="form-control" name="eng_id" id="update_id" readonly="">
 						</div>
 						<div class="form-group">
-							<label>Engineer Name</label>
+							<label>Employee Name</label>
 							<input type="text" class="form-control" name="eng_name" id="update_name">
 						</div>
 						<div class="form-group">
-							<label>Engineer Phone</label>
+							<label>Employee Phone</label>
 							<input type="text" class="form-control" name="eng_phone" id="update_phone">
 						</div>
 						<div class="form-group">
-							<label>Engineer Password</label>
+							<label>Employee Password</label>
 							<input type="text" class="form-control" name="eng_password" id="update_password" placeholder="Enter New Password">
 						</div>
 					</div>
@@ -162,7 +162,7 @@
 			if($('#eng_name').val() == '' || $('#eng_id').val() == '' || $('#phone').val() == '' || $('#pwd').val() == '') {
 				Swal.fire({
 					type: 'warning',
-					title: 'Engineer Details Empty'
+					title: 'Employee Details Empty'
 				})
 				$('#add_btn').prop('disabled', false)
 				$('#add_btn').html('Try Again')
@@ -175,7 +175,7 @@
 				success: function() {
 					Swal.fire({
 						type: 'success',
-						title: 'Engineer Added'
+						title: 'Employee Added'
 					})
 					$('#add_btn').prop('disabled', false)
 					$('#add_btn').html('Add Another')
@@ -213,7 +213,7 @@
 		function deleteEng(id) {
 			Swal.fire({
 				type: 'warning',
-				title: 'Do you really wanna delete the engineer?',
+				title: 'Do you really wanna delete the employee?',
 				text: 'It is irreversible',
 				showCancelButton: true,
 				confirmButtonText: 'Yes, delete',
@@ -228,7 +228,7 @@
 						success: function() {
 							Swal.fire({
 								type: 'success',
-								title: 'Engineer Deleted'
+								title: 'Employee Deleted'
 							})
 						},
 						error: function() {

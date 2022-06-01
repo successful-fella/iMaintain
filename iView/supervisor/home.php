@@ -38,7 +38,7 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col">
-											<h5 class="card-title text-uppercase text-muted mb-0">Equipments</h5>
+											<h5 class="card-title text-uppercase text-muted mb-0">Items</h5>
 											<span class="h2 font-weight-bold mb-0"><?= $equipment_count ?></span>
 										</div>
 										<div class="col-auto">
@@ -55,7 +55,7 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col">
-											<h5 class="card-title text-uppercase text-muted mb-0">Engineers</h5>
+											<h5 class="card-title text-uppercase text-muted mb-0">Employees</h5>
 											<span class="h2 font-weight-bold mb-0"><?= $engineer_count ?></span>
 										</div>
 										<div class="col-auto">
@@ -116,7 +116,7 @@
 											<th scope="col">Date</th>
 											<th scope="col">Time</th>
 											<th scope="col">Notification</th>
-											<th scope="col">Engineer</th>
+											<th scope="col">Employee</th>
 
 										</tr>
 									</thead>
@@ -140,7 +140,7 @@
 							<div class="card-header border-0">
 								<div class="row align-items-center">
 									<div class="col">
-										<h3 class="mb-0">Engineer Activities</h3>
+										<h3 class="mb-0">Employee Activities</h3>
 									</div>
 								</div>
 							</div>
@@ -182,10 +182,10 @@
 							<table class="table align-items-center table-flush">
 								<thead class="thead-light">
 									<tr>
-										<th scope="col">Engineer Name</th>
+										<th scope="col">Employee Name</th>
 										<th scope="col">Date</th>
-										<th scope="col">Equipment ID</th>
-										<th scope="col">Equipment Name</th>
+										<th scope="col">Item ID</th>
+										<th scope="col">Item Name</th>
 										<th scope="col">Status</th>
 										<th scope="col">Report</th>
 
@@ -247,7 +247,7 @@
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
-							<label>Engineer ID <small>(Leave empty to send to all)</small></label>
+							<label>Employee ID <small>(Leave empty to send to all)</small></label>
 							<input type="text" onkeyup="searchEng()" class="form-control" placeholder="Enter ID/Name or Leave Empty" id="eng_id_search" autocomplete="off">
 							<div class="modal-title card container-fluid">
 								<p id="eng_data"></p>

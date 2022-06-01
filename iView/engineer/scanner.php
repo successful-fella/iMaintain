@@ -78,7 +78,7 @@
 	<script type="text/javascript">
 		var base_url = "<?= $base_url ?>"
 	</script>
-	<script src="https://app.catriu.com/assets/js/jsQR.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
 	<script type="text/javascript" src="<?= base_url('res/js/scanner.js?v=15') ?>"></script>
 
 </body>

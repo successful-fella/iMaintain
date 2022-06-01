@@ -90,22 +90,47 @@ class Supervisor_model extends CI_Model
 	}
 
 	function addEquipment($arr) {
+		$file_name = "photo";
+		$ext = strtolower(pathinfo($_FILES[$file_name]['name'], PATHINFO_EXTENSION));
+		$newname = '';
+		if ($_FILES[$file_name]['size']) {
+    		$newname = time().'.'.$ext;	
+    		move_uploaded_file($_FILES[$file_name]['tmp_name'], __DIR__.'/../../uploads/'.$newname);
+    	}
+
 		$data = array(
+			'equipment_id' => $arr['id'],
 			'equipment_name' => $arr['name'],
+			'equipment_price' => $arr['price'],
 			'equipment_doi' => $arr['doi'],
 			'department_id' => $arr['dept_id'],
 			'equipment_detail' => $arr['details'],
+			'equipment_photo' => $newname
 		);
 		$this->db->insert('equipment', $data);
 	}
 	
 	function updateEquipment($arr) {
+		$file_name = "photo";
+		$ext = strtolower(pathinfo($_FILES[$file_name]['name'], PATHINFO_EXTENSION));
+		$newname = '';
+		if ($_FILES[$file_name]['size']) {
+    		$newname = time().'.'.$ext;	
+    		move_uploaded_file($_FILES[$file_name]['tmp_name'], __DIR__.'/../../uploads/'.$newname);
+    	}
+
 		$data = array(
 			'equipment_name' => $arr['name'],
+			'equipment_price' => $arr['price'],
 			'equipment_doi' => $arr['doi'],
 			'department_id' => $arr['dept_id'],
-			'equipment_detail' => $arr['details'],
+			'equipment_detail' => $arr['details']
 		);
+
+		if($newname != '') {
+			$data['equipment_photo'] = $newname;
+		}
+
 		$this->db->where('equipment_id', $arr['id'])->update('equipment', $data);
 	}
 

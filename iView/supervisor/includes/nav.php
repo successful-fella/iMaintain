@@ -48,7 +48,7 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link <?= ($selected[0] == 'engineer')?'active':'' ?>" href="<?= base_url('supervisor/engineers') ?>">
-						<i class="ni ni-single-02 text-yellow"></i> Engineers
+						<i class="ni ni-single-02 text-yellow"></i> Employees
 					</a>
 				</li>
 				<li class="nav-item">
@@ -58,7 +58,7 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link <?= ($selected[0] == 'equipment')?'active':'' ?>" href="<?= base_url('supervisor/equipments') ?>">
-						<i class="ni ni-key-25 text-info"></i> Equipments
+						<i class="ni ni-key-25 text-info"></i> Item
 					</a>
 				</li>
 			</ul>
